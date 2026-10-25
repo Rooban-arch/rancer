@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "next": "14.2.15",
+    "@rancer/shared-data": "*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "framer-motion": "^11.11.9",

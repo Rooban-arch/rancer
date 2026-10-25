@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { readDatabase, writeDatabase } from '@rancer/shared-data/storage';
+import { readDatabase, writeDatabase } from '@/lib/storage';
 
 export async function GET() {
   try {

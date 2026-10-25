@@ -5,8 +5,12 @@ echo ====================================================
 echo Pushing Rancer Project to GitHub (Rooban-arch/rancer)
 echo ====================================================
 echo.
-"%LOCALAPPDATA%\Programs\Git\cmd\git.exe" branch -M main
-"%LOCALAPPDATA%\Programs\Git\cmd\git.exe" push -u origin main --force
+
+set "GIT_CMD=%LOCALAPPDATA%\Programs\Git\cmd\git.exe"
+if not exist "%GIT_CMD%" set "GIT_CMD=git"
+
+%GIT_CMD% branch -M main
+%GIT_CMD% push -u origin main --force
 
 echo.
 if %ERRORLEVEL% EQU 0 (
@@ -16,7 +20,7 @@ if %ERRORLEVEL% EQU 0 (
     echo ====================================================
 ) else (
     echo.
-    echo If prompted above, please sign in to your GitHub account.
+    echo If prompted above, please sign in to your GitHub account in the browser.
 )
 echo.
 pause

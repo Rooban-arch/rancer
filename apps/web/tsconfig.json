@@ -19,7 +19,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@rancer/shared-data": ["../../packages/shared-data"]
+      "@rancer/shared-data": ["../../packages/shared-data"],
+      "@rancer/shared-data/*": ["../../packages/shared-data/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
