@@ -1,0 +1,20 @@
+{
+  "name": "rancer-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"WEB,ADMIN\" -c \"cyan,magenta\" \"npm run dev:web\" \"npm run dev:admin\"",
+    "dev:web": "npm run dev --workspace=rancer-web",
+    "dev:admin": "npm run dev --workspace=rancer-admin",
+    "build": "npm run build --workspaces --if-present",
+    "build:web": "npm run build --workspace=rancer-web",
+    "build:admin": "npm run build --workspace=rancer-admin"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
