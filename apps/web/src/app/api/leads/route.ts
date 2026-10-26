@@ -14,6 +14,10 @@ export async function POST(request: Request) {
       );
     }
 
+    const formattedBudget = budget
+      ? (budget.includes('₹') ? budget.trim() : `₹${budget.trim()}`)
+      : 'Flexible';
+
     const newLead: Lead = {
       id: `lead-${Date.now()}`,
       name,
@@ -21,7 +25,7 @@ export async function POST(request: Request) {
       phone: phone || '',
       company: company || '',
       service: service || 'Website Development',
-      budget: budget || '$5k - $15k',
+      budget: formattedBudget,
       message,
       status: 'New',
       createdAt: new Date().toISOString(),
@@ -51,7 +55,7 @@ export async function POST(request: Request) {
             phone: phone || '',
             company: company || '',
             service: service || 'Website Development',
-            budget: budget || '$5k - $15k',
+            budget: formattedBudget,
             message,
             status: 'New',
             notes: 'Submitted via public contact form.'

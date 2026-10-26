@@ -15,13 +15,6 @@ import {
   MessageSquare
 } from 'lucide-react';
 
-const BUDGET_TIERS = [
-  '< $5,000',
-  '$5,000 - $15,000',
-  '$15,000 - $30,000',
-  '$30,000+'
-];
-
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -29,7 +22,7 @@ export default function ContactPage() {
     phone: '',
     company: '',
     service: initialServices[0].title,
-    budget: '$5,000 - $15,000',
+    budget: '',
     message: ''
   });
 
@@ -214,7 +207,7 @@ export default function ContactPage() {
                         phone: '',
                         company: '',
                         service: initialServices[0].title,
-                        budget: '$5,000 - $15,000',
+                        budget: '',
                         message: ''
                       });
                     }}
@@ -316,27 +309,26 @@ export default function ContactPage() {
                     </select>
                   </div>
 
-                  {/* Budget Selector Pills */}
+                  {/* Custom Budget Input in Indian Rupees */}
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                      Estimated Project Budget
+                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                      Estimated Project Budget (₹ INR)
                     </label>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                      {BUDGET_TIERS.map((tier) => (
-                        <button
-                          key={tier}
-                          type="button"
-                          onClick={() => setFormData({ ...formData, budget: tier })}
-                          className={`py-2 px-3 rounded-xl text-xs font-semibold border transition ${
-                            formData.budget === tier
-                              ? 'bg-slate-900 text-white border-slate-900 shadow-sm'
-                              : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
-                          }`}
-                        >
-                          {tier}
-                        </button>
-                      ))}
+                    <div className="relative">
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-slate-400 select-none">
+                        ₹
+                      </span>
+                      <input
+                        type="text"
+                        value={formData.budget}
+                        onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                        placeholder="e.g. 2,000 - 4,000 or custom amount"
+                        className="w-full pl-9 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition"
+                      />
                     </div>
+                    <p className="text-[11px] text-slate-500 mt-1">
+                      Enter your estimated budget or budget range in Indian Rupees (₹).
+                    </p>
                   </div>
 
                   {/* Project Details */}
