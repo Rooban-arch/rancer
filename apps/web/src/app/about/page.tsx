@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/image';
 import { initialSiteSettings } from '@rancer/shared-data';
 import CTASection from '@/components/CTASection';
 import {
@@ -10,7 +9,6 @@ import {
   Compass,
   HeartHandshake,
   CheckCircle2,
-  Users,
   ShieldCheck,
   Zap,
   Cpu,
@@ -40,33 +38,6 @@ export default function AboutPage() {
     {
       title: 'Long-Term Partnership',
       desc: 'We don’t view engagements as transactional projects. We stay by your side through market pivots, scaling bottlenecks, and product expansions.'
-    }
-  ];
-
-  const teamMembers = [
-    {
-      name: 'Rooban Rancer',
-      role: 'Founder & Principal Technologist',
-      bio: 'Visionary full-stack architect with 8+ years leading enterprise digital transformations and scalable software platforms.',
-      avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      name: 'Arjun Mehta',
-      role: 'Chief AI & Systems Architect',
-      bio: 'Specialist in autonomous LLM workflows, RAG knowledge graph orchestration, and distributed cloud computing systems.',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      name: 'Sarah Chen',
-      role: 'Head of Product & UI/UX Design',
-      bio: 'Award-winning visual designer translating complex user flows into clean, elegant, human-centered digital experiences.',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      name: 'Vikram Sengupta',
-      role: 'Director of Growth & Strategy',
-      bio: 'Former founder helping companies scale from pre-seed to high-growth revenue through digital marketing and SEO.',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80'
     }
   ];
 
@@ -225,51 +196,6 @@ export default function AboutPage() {
               <p className="text-xs text-slate-600 leading-relaxed">{v.desc}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Leadership & Engineering Team */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100/80 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3">
-              <Users className="w-3.5 h-3.5" />
-              LEADERSHIP TEAM
-            </div>
-            <h2 className="text-3xl font-display font-bold text-slate-900">
-              The Minds Behind Rancer
-            </h2>
-            <p className="text-sm text-slate-600 mt-2">
-              Passionate technologists, product architects, and growth consultants.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamMembers.map((member, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition"
-              >
-                <div className="relative h-64 w-full bg-slate-100">
-                  <Image
-                    src={member.avatar}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-base font-bold text-slate-900">{member.name}</h3>
-                  <span className="text-xs font-semibold text-blue-600 block mb-2">
-                    {member.role}
-                  </span>
-                  <p className="text-xs text-slate-500 leading-relaxed">
-                    {member.bio}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
