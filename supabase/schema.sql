@@ -184,6 +184,6 @@ VALUES (
   '+91 96006 83605',
   '+91 96006 83605',
   '{"linkedin": "https://linkedin.com/company/rancer", "instagram": "https://instagram.com/rancer_tech", "facebook": "https://facebook.com/rancertech", "twitter": "https://x.com/rancer_tech", "whatsapp": "https://wa.me/919600683605"}'::jsonb,
-  '{"clients": "100+", "projects": "150+", "experience": "8+", "satisfaction": "99%"}'::jsonb,
+  '{"clients": "20+", "projects": "30+", "experience": "1+", "satisfaction": "99%"}'::jsonb,
   '{"title": "Rancer — Build · Automate · Grow | Digital Solutions for Modern Businesses", "description": "We Build Digital Solutions for Modern Businesses."}'::jsonb
 ) ON CONFLICT (id) DO NOTHING;

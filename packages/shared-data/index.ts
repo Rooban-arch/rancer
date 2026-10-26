@@ -165,9 +165,9 @@ export const initialSiteSettings: SiteSettings = {
     whatsapp: 'https://wa.me/919600683605'
   },
   stats: {
-    clients: '100+',
-    projects: '150+',
-    experience: '8+',
+    clients: '20+',
+    projects: '30+',
+    experience: '1+',
     satisfaction: '99%'
   },
   seoDefaults: {
