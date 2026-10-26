@@ -4,17 +4,12 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  Linkedin,
-  Instagram,
-  Facebook,
-  Twitter,
-  Phone,
   Mail,
   Send,
   CheckCircle2,
   ArrowUpRight
 } from 'lucide-react';
-import { initialServices, initialSiteSettings } from '@rancer/shared-data';
+import { initialServices } from '@rancer/shared-data';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -71,55 +66,6 @@ export default function Footer() {
               We help businesses build, automate and grow with modern digital solutions.
               From high-performance web and mobile platforms to autonomous AI systems and operational tools.
             </p>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href={initialSiteSettings.socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-200"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href={initialSiteSettings.socialLinks.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-pink-600 hover:border-pink-500 transition-all duration-200"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href={initialSiteSettings.socialLinks.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-700 hover:border-blue-600 transition-all duration-200"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href={initialSiteSettings.socialLinks.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X Twitter"
-                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-600 transition-all duration-200"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a
-                href={initialSiteSettings.socialLinks.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-emerald-600 hover:border-emerald-500 transition-all duration-200"
-              >
-                <Phone className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links (2 cols) */}
